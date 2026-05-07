@@ -27,3 +27,9 @@
     device = <&trackball>;
   };
 };
+
+/* --- ここから追加 --- */
+// 右手側ではエンコーダーを無効化する
+&left_encoder {
+    status = "disabled";
+};
