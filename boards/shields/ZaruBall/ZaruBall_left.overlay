@@ -15,10 +15,11 @@
     status = "okay";
 };
 
-/ {
-    trackball_listener: trackball_listener {
-    compatible = "zmk,input-listener";
-    status = "status = "disabled";
-    device = <&trackball>;
-    };
+// 左手側ではトラックボール関連の機能をすべて無効化する
+&trackball {
+    status = "disabled";
+};
+
+&trackball_listener {
+    status = "disabled";
 };
