@@ -10,14 +10,6 @@
 
 #define BASE 0
 
-// トラックボールの設定（レイヤー移動を削除し、純粋なポインタとして設定）
-&trackball_listener {
-    input-processors = <
-        // トラックボールの向きの変更
-        &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT)
-    >;
-};
-
 / {
     behaviors {
         // ロータリーエンコーダ等のスクロール用の設定
