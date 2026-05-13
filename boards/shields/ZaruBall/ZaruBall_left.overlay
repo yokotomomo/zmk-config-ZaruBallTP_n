@@ -14,12 +14,3 @@
 &left_encoder {
     status = "okay";
 };
-
-// 左手側ではトラックボール関連の機能をすべて無効化する
-&trackball {
-    status = "disabled";
-};
-
-&trackball_listener {
-    status = "disabled";
-};
