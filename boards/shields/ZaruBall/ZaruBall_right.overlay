@@ -19,15 +19,6 @@
 };
 
 
-// ZaruBall.dtsiで定義したtrackball_listenerを有効化
-/ {
-  trackball_listener {
-    status = "okay";
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-  };
-};
-
 /* --- ここから追加 --- */
 // 右手側ではエンコーダーを無効化する
 &left_encoder {
