@@ -15,17 +15,3 @@ config ZMK_SPLIT
     default y
 
 endif
-
-# Input Device(pmw3610)のためのコンフィグ
-if SHIELD_ZARUBALL_RIGHT
-
-# Other settings
-
-config ZMK_POINTING
-    default y
-
-# Assuming pointing device uses SPI
-config SPI
-    default y
-
-endif
