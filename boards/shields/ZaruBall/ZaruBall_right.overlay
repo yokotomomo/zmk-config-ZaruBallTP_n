@@ -1,6 +1,6 @@
 #include "ZaruBall.dtsi"
 #include <dt-bindings/zmk/input_transform.h>
-
+#include <dt-bindings/pinctrl/nrf-pinctrl.h>
 
 // matrix transformでのピン数オフセット
 &default_transform { // Offset of 7 because the left side has 2 columns
@@ -24,3 +24,46 @@
 &left_encoder {
     status = "disabled";
 };
+
+&pinctrl {
+    /* 起きている時（通信中）のピン設定 */
+    i2c0_custom: i2c0_custom {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 5)>, /* D9 (P0.09) をSDAに */
+                    <NRF_PSEL(TWIM_SCL, 0, 4)>; /* D8 (P0.08) をSCLに */
+        };
+    };
+
+    /* 寝ている時（省電力待機中）のピン設定 */
+    i2c0_custom_sleep: i2c0_custom_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 5)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 4)>;
+            low-power-enable; /* スリープさせる命令 */
+        };
+    };
+};
+
+&i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twim";
+    clock-frequency = <I2C_BITRATE_FAST>;
+    
+    /* 上で作った2つの状態をペアで指定します！ */
+    pinctrl-0 = <&i2c0_custom>;
+    pinctrl-1 = <&i2c0_custom_sleep>;
+    pinctrl-names = "default", "sleep";
+    
+    /* Cirque Pinnacle トラックパッドの設定 */
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "okay";
+        
+        dr-gpios = <&gpio0 16 (GPIO_ACTIVE_HIGH)>; /* D6ピンをDRに */
+        
+        sensitive-tap;
+        sleep;
+    };
+};
+
