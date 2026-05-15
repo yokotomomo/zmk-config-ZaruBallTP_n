@@ -6,8 +6,6 @@ manifest:
       url-base: https://github.com/badjeff
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: ShiniNet
-      url-base: https://github.com/ShiniNet/
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -23,8 +21,8 @@ manifest:
       revision: v0.3-branch
       # west.yml の中にある拡張モジュール読み込みの例
     # ----------------
-   - name: cirque-input-module
-      remote: ShiniNet
-      revision: main
+    - name: zmk-pmw3610-driver
+      remote: badjeff
+      revision: zmk-0.3
   self:
     path: config
