@@ -70,7 +70,7 @@
 
 / {
     trackball_listener {
-        compatible = "zmk,input-behavior-listener";
+        compatible = "zmk,input-listener";
         device = <&glidepoint>;
 
         input-processors =  <
