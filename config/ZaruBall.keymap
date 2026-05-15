@@ -41,8 +41,8 @@
 &mt LALT LANG2     &kp C_MUTE  &kp LWIN  &kp LCTRL  &kp SPACE  &mo SCROLL       &kp RET    &kp BSPC                                          &mt RCTL LANG1
             >;
         };
-        SCROLL_layer {
-            display-name = "SCROLL";
+        Scroll_layer {
+            display-name = "Scroll";
             sensor-bindings = <&scroll_down_up>;
             bindings = <
 &kp ESC    &kp N1  &kp N2      &kp N3    &kp N4     &kp N5                                &kp N6    &kp N7    &kp N8    &kp N9     &kp N0   &kp MINUS
@@ -52,8 +52,8 @@
 &mt LALT LANG2     &kp C_MUTE  &kp LWIN  &kp LCTRL  &kp SPACE  &kp SPACE       &kp RET    &kp BSPC                                          &mt RCTL LANG1
             >;
         };
-        MOUSE_layer {
-            display-name = "MOUSE";
+        mouse_layer {
+            display-name = "Mouse";
             sensor-bindings = <&scroll_down_up>;
             bindings = <
 &kp ESC    &kp N1  &kp N2      &kp N3    &kp N4     &kp N5                                &kp N6    &kp N7    &kp N8    &kp N9     &kp N0   &kp MINUS
