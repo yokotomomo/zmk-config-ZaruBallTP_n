@@ -21,8 +21,8 @@ manifest:
       revision: v0.3-branch
       # west.yml の中にある拡張モジュール読み込みの例
     # ----------------
-  - name: zmk-input-behavior-listener
-    remote: badjeff
-    revision: main
+   - name: cirque-input-module
+      remote: ShiniNet
+      revision: main
   self:
     path: config
