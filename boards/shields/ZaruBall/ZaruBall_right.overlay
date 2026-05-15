@@ -31,6 +31,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 4)>, /* D9 (P0.09) をSDAに */
                     <NRF_PSEL(TWIM_SCL, 0, 16)>; /* D8 (P0.08) をSCLに */
+bias-pull-up;
         };
     };
 
