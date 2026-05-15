@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h> // included when matrix transform added
 #include <physical_layouts.dtsi> // When using keys property include needed
+#include <dt-bindings/pinctrl/nrf-pinctrl.h>
 
 // chosen node
 / {
@@ -150,7 +151,7 @@
 
 
 /* ファイルの一番上に必ず追記してください（辞書の読み込み） */
-#include <dt-bindings/pinctrl/nrf-pinctrl.h>
+
 
 /* =========================================
    1. カスタムピンの定義（起きている時と寝ている時の2つを用意）
