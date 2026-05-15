@@ -12,6 +12,8 @@
 #define SCROLL 1
 #define MOUSE 2
 
+
+
 / {
     behaviors {
         // ロータリーエンコーダ等のスクロール用の設定
