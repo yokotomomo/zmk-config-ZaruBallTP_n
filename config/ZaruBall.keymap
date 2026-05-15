@@ -13,16 +13,6 @@
 #define MOUSE 2
 
 
-// トラックパッドの設定(AML, SCROLL)
-&trackball_listener {
-    device = <&glidepoint>;
-
-    input-processors =  <
-        &zip_temp_layer MOUSE 500 // 500ms stay at mouse layer
-    >;
-
-};
-
 
 / {
     behaviors {
