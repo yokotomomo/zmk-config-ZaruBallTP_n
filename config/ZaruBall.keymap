@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 #define BASE 0
+#define SCROLL 1
 
 // トラックパッドの設定(AML, SCROLL)
 &trackball_listener {
