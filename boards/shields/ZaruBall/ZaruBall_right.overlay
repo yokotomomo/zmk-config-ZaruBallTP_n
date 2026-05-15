@@ -68,23 +68,3 @@
     };
 };
 
-/ {
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&glidepoint>;
-
-        input-processors =  <
-            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT)
-            &zip_temp_layer 2 500  /* MOUSEレイヤー(2)への切り替え */
-        >;
-
-        scroller {
-            layers = <1>;  /* SCROLLレイヤー(1)での動作 */
-            input-processors = <
-                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
-                &zip_xy_scaler 1 20
-                &zip_xy_to_scroll_mapper
-            >;
-        };
-    };
-};
