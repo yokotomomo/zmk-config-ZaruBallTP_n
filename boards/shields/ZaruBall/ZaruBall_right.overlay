@@ -1,6 +1,8 @@
 #include "ZaruBall.dtsi"
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/pinctrl/nrf-pinctrl.h>
+#include <dt-bindings/pinctrl/nrf-pinctrl.h>
+#include <dt-bindings/zmk/input_transform.h> /* ← ★これを追加（方向変換の辞書） */
 
 // matrix transformでのピン数オフセット
 &default_transform { // Offset of 7 because the left side has 2 columns
@@ -67,13 +69,3 @@
     };
 };
 
-
-// ZaruBall.dtsiで定義したtrackball_listenerを有効化
-/ {
-  trackball_listener {
-    status = "okay";
-    compatible = "zmk,input-listener";
-    device =  <&glidepoint>;
-
-  };
-};
