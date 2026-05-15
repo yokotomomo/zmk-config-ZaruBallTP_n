@@ -67,27 +67,13 @@
     };
 };
 
+
+// ZaruBall.dtsiで定義したtrackball_listenerを有効化
 / {
-    trackball_listener {
-        /* ↓これが「拡張モジュールを使ってオートレイヤーを動かしてね」という宣言です */
-        compatible = "zmk,input-behavior-listener";
-        
-        /* ターゲットをCirqueに指定 */
-        device = <&glidepoint>;
+  trackball_listener {
+    status = "okay";
+    compatible = "zmk,input-listener";
+    device =  <&glidepoint>;
 
-        input-processors =  <
-            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT)
-            &zip_temp_layer MOUSE 500
-        >;
-
-        scroller {
-            layers = <SCROLL>;
-            input-processors = <
-                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
-                &zip_xy_scaler 1 20
-                &zip_xy_to_scroll_mapper
-            >;
-        };
-    };
+  };
 };
-
