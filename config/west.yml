@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: ShiniNet
+      url-base: https://github.com/ShiniNet/
   projects:
     - name: zmk
       remote: zmkfirmware
