@@ -38,8 +38,8 @@
     /* 寝ている時（省電力待機中）のピン設定 */
     i2c0_custom_sleep: i2c0_custom_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 5)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 4)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 16)>;
             low-power-enable; /* スリープさせる命令 */
         };
     };
@@ -61,7 +61,7 @@
         reg = <0x2a>;
         status = "okay";
         
-        dr-gpios = <&gpio0 16 (GPIO_ACTIVE_HIGH)>; /* D6ピンをDRに */
+        dr-gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH)>; /* D6ピンをDRに */
         
         sensitive-tap;
         sleep;
