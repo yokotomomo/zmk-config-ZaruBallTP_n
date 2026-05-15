@@ -148,4 +148,25 @@
     };
 };
 
+/* I2C0バスの設定 */
+&i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twim";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    /* Cirque Pinnacle トラックパッドの設定 */
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>; /* CirqueのI2Cアドレス */
+        status = "okay";
+        
+        /* DRピンの設定（今回はXIAOのD6 = P0.06を指定） */
+        dr-gpios = <&gpio0 16 (GPIO_ACTIVE_HIGH)>;
+        
+        /* 感度やスリープの設定 */
+        sensitive-tap;
+        sleep;
+    };
+};
+
 
