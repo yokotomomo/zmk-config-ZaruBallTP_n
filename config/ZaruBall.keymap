@@ -12,6 +12,26 @@
 #define SCROLL 1
 #define MOUSE 2
 
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&glidepoint>;
+
+        input-processors =  <
+            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT)
+            &zip_temp_layer 2 500  /* ← ★ MOUSE という文字を 2 に変更 */
+        >;
+
+        scroller {
+            layers = <1>;  /* ← ★ SCROLL という文字を 1 に変更 */
+            input-processors = <
+                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
+                &zip_xy_scaler 1 20
+                &zip_xy_to_scroll_mapper
+            >;
+        };
+    };
+};
 // トラックパッドの設定(AML, SCROLL)
 &trackball_listener {
     device = <&glidepoint>;
