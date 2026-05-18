@@ -71,7 +71,7 @@ bias-pull-up;
 
 /* --- シンプルなマウス移動だけのシステム --- */
 / {
-    trackball_listener: trackball_listener {
+    glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&glidepoint>;
         status = "okay";
