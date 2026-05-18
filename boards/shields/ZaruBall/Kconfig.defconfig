@@ -1,21 +1,44 @@
-if SHIELD_ZARUBALL_LEFT
-
-config ZMK_KEYBOARD_NAME
-    default "ZaruBall"
-
-# 左手は親機（Central）になる
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
-    default y
-
-endif
-
+# ==========================================
+# 右手（Right）の設定：こちらを「親機（Central）」にする
+# ==========================================
 if SHIELD_ZARUBALL_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "ZaruBall"
 
-# 右手は親機ではなく、子機（Peripheral）になる！
+# 右手を親機にする設定（最新のZMKの書き方）
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
-    default n
+    default y
+
+# マウス機能をONにする
+config ZMK_POINTING
+    default y
+
+# SPIではなくI2Cを使うように変更！
+config I2C
+    default y
+
+endif
+
+
+# ==========================================
+# 左手（Left）の設定：こちらは「子機（Peripheral）」になる
+# ==========================================
+if SHIELD_ZARUBALL_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "ZaruBall"
+
+endif
+
+
+# ==========================================
+# 左右共通の設定
+# ==========================================
+if SHIELD_ZARUBALL_LEFT || SHIELD_ZARUBALL_RIGHT
+
+# 分割キーボードであることを宣言
+config ZMK_SPLIT
+    default y
 
 endif
