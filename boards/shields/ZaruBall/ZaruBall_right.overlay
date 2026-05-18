@@ -73,6 +73,7 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&glidepoint>;
+        status = "okay";
 
         /* マウスカーソルの移動（向きの調整） */
         input-processors = <
