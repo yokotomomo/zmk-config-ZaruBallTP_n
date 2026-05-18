@@ -71,7 +71,7 @@
 /* --- シンプルなマウス移動だけのシステム --- */
 / {
     trackball_listener: trackball_listener {
-        compatible =  "zmk,input-listener";
+        compatible = "zmk,input-behavior-listener";
         device = <&glidepoint>;
         status = "okay";
 
