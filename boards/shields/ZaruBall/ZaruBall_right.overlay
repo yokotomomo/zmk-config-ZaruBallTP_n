@@ -67,11 +67,16 @@
     };
 };
 
-/* --- ZMK純正のシンプルなマウス移動システム --- */
+/* --- シンプルなマウス移動だけのシステム --- */
 / {
-    trackball_listener: trackball_listener{
-        compatible = "zmk,input-listener";
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-behavior-listener";
         device = <&glidepoint>;
+
+        /* マウスカーソルの移動（向きの調整） */
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT)
+        >;
     };
 };
 
