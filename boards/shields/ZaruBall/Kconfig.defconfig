@@ -1,17 +1,21 @@
-if SHIELD_ZARUBALL_RIGHT #ここを変えてセントラル側に問題のコードを移行
+if SHIELD_ZARUBALL_LEFT
 
-# Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
     default "ZaruBall"
 
-config ZMK_SPLIT_ROLE_CENTRAL
+# 左手は親機（Central）になる
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_ZARUBALL_LEFT || SHIELD_ZARUBALL_RIGHT
+if SHIELD_ZARUBALL_RIGHT
 
-config ZMK_SPLIT
-    default y
+config ZMK_KEYBOARD_NAME
+    default "ZaruBall"
+
+# 右手は親機ではなく、子機（Peripheral）になる！
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    default n
 
 endif
